@@ -10,17 +10,20 @@
             if (/Mobi|Android/i.test(navigator.userAgent)) {
                 deviceType = "Mobile";
             }
-            // Set the device type into a hidden input field
             document.getElementById('deviceType').value = deviceType;
+        }
+
+        function submitForm() {
+            captureDeviceInfo();
+            document.getElementById('deviceInfoForm').submit();
         }
     </script>
 </head>
 <body onload="captureDeviceInfo()">
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeA-3xagZOrqMop___tLdIFVp55BzV62Wnmxl0IrXogAlqP6Q/viewform" width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-    <!-- Form to capture device information -->
-    <form id="deviceInfoForm" action="https://script.google.com/macros/s/AKfycbzaG96yOsvtruhjScyAiVmdRw5VDdl9zqLEEXf4fndR5yGw5KgKFK-d3fR5t801YC3Gtw/exec" method="POST">
+    <form id="deviceInfoForm" action="https://script.google.com/macros/s/AKfycbz2kovfvr2by_H1BfNMawHdcxKhZPqv4V1khBAXxTz6S_8Zcbd79fiajkSfRRmQwTbZ_Q/exec" method="POST">
         <input type="hidden" id="deviceType" name="deviceType">
-        <input type="submit" style="display:none"> <!-- Invisible submit button for form -->
+        <input type="submit" style="display:none"> <!-- Invisible submit button -->
     </form>
 </body>
 </html>
